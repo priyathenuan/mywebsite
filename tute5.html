@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RBS COLLEGE MADORA MAHAVAN</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+ font-family:Arial,sans-serif;
+ background:#fffdf5;color:#333;
+}
+header{
+ background:#fff;padding:15px 5%;
+ display:flex;align-items:center;gap:15px;
+ border-bottom:4px solid #e7bd43;
+}
+.logo{
+ width:65px;height:65px;border-radius:50%;
+ background:#f2d77b;display:grid;
+ place-items:center;font-weight:bold;
+ color:#604700;font-size:19px;
+}
+header h1{font-size:23px;color:#705000}
+header p{font-size:13px;color:#777;margin-top:5px}
+nav{
+ background:#876600;padding:14px;
+ display:flex;justify-content:center;
+ flex-wrap:wrap;gap:22px;
+}
+nav a{color:white;text-decoration:none;font-weight:bold}
+.hero{
+ min-height:340px;background:#f7edcf;
+ display:flex;flex-direction:column;
+ justify-content:center;align-items:center;
+ text-align:center;padding:35px 15px;
+}
+.hero h2{font-size:34px;color:#735300}
+.hero p{margin:15px;line-height:1.7}
+.btn{
+ background:#d6a900;color:white;
+ border:0;padding:12px 22px;
+ border-radius:5px;cursor:pointer;
+ margin:5px;font-weight:bold;
+}
+section{padding:35px 6%}
+.heading{
+ color:#775700;text-align:center;
+ margin-bottom:25px;font-size:26px;
+}
+.cards{
+ display:grid;grid-template-columns:
+ repeat(auto-fit,minmax(220px,1fr));gap:18px;
+}
+.card{
+ background:white;padding:20px;
+ border:1px solid #eee0b8;
+ border-radius:10px;box-shadow:0 3px 10px #0000000b;
+}
+.card h3{color:#846200;margin-bottom:12px}
+.card p{line-height:1.7}
+input,textarea,select{
+ width:100%;padding:12px;margin:7px 0;
+ border:1px solid #d8c58b;border-radius:5px;
+ font-size:15px;background:#fff;
+}
+.gallery{
+ display:grid;grid-template-columns:
+ repeat(auto-fit,minmax(180px,1fr));gap:12px;
+}
+.gallery img{
+ width:100%;height:180px;
+ object-fit:cover;border-radius:8px;
+}
+.notice-item{
+ padding:12px;border-bottom:1px solid #eee;
+ line-height:1.6;
+}
+.admin{
+ background:#fff6d9;border:2px solid #dfbd56;
+ border-radius:10px;padding:22px;
+ max-width:650px;margin:auto;
+}
+footer{
+ background:#594400;color:white;
+ text-align:center;padding:30px;line-height:2;
+}
+.hidden{display:none}
+.small-btn{
+ padding:5px 10px;background:#b38b00;
+ color:white;border:0;border-radius:4px;
+ cursor:pointer;margin:5px;
+}
+@media(max-width:600px){
+ header h1{font-size:17px}
+ .hero h2{font-size:25px}
+ nav{gap:13px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">RBS</div>
+<div>
+<h1>RBS COLLEGE</h1>
+<p>MADORA MAHAVAN</p>
+</div>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#courses">Courses</a>
+<a href="#notice">Notices</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+<a href="#admin">Admin</a>
+</nav>
+
+<div class="hero" id="home">
+<h2>WELCOME TO RBS COLLEGE</h2>
+<h3>MADORA MAHAVAN</h3>
+<p>शिक्षा, संस्कार और उज्ज्वल भविष्य की ओर एक कदम।</p>
+<button class="btn" onclick="document.getElementById('about').scrollIntoView()">Explore College</button>
+</div>
+
+<section id="about">
+<h2 class="heading">About Our College</h2>
+<div class="card">
+<h3>RBS COLLEGE MADORA MAHAVAN</h3>
+<p id="aboutText">
+RBS College में आपका स्वागत है।
+यहां शिक्षा, अनुशासन और विद्यार्थियों के सर्वांगीण विकास पर विशेष ध्यान दिया जाता है।
+</p>
+</div>
+</section>
+
+<section id="courses">
+<h2 class="heading">Our Courses</h2>
+<div class="cards" id="courseList">
+<div class="card"><h3>Courses</h3><p>कॉलेज के कोर्स की जानकारी यहां उपलब्ध होगी।</p></div>
+</div>
+</section>
+
+<section id="notice">
+<h2 class="heading">Latest Notices / सूचनाएं</h2>
+<div class="card" id="noticeList">
+<p>अभी कोई नई सूचना उपलब्ध नहीं है।</p>
+</div>
+</section>
+
+<section>
+<h2 class="heading">Student Information</h2>
+<div class="card" id="studentList">
+<p>विद्यार्थियों की जानकारी जल्द उपलब्ध होगी।</p>
+</div>
+</section>
+
+<section>
+<h2 class="heading">Our Teachers</h2>
+<div class="cards" id="teacherList"></div>
+</section>
+
+<section id="gallery">
+<h2 class="heading">College Photo Gallery</h2>
+<div class="gallery" id="galleryList"></div>
+</section>
+
+<section>
+<h2 class="heading">College Events</h2>
+<div class="card" id="eventList">
+<p>कॉलेज के कार्यक्रमों की जानकारी यहां दिखाई जाएगी।</p>
+</div>
+</section>
+
+<section id="contact">
+<h2 class="heading">Contact Us</h2>
+<div class="card">
+<h3>RBS COLLEGE MADORA MAHAVAN</h3>
+<p>Address: Madora Mahavan</p>
+<p>Phone: कॉलेज का फोन नंबर यहां डालें</p>
+<p>Email: कॉलेज का ईमेल यहां डालें</p>
+</div>
+</section>
+
+<section id="admin">
+<h2 class="heading">Admin Panel</h2>
+<div class="admin">
+<h3>🔐 Admin Login</h3>
+<input id="password" type="password" placeholder="Enter Admin Password">
+<button class="btn" onclick="login()">Login</button>
+
+<div id="adminPanel" class="hidden">
+
+<h3>➕ Add Notice</h3>
+<input id="noticeInput" placeholder="Notice Title">
+<textarea id="noticeDesc" placeholder="Notice Details"></textarea>
+<button class="btn" onclick="addNotice()">Add Notice</button>
+
+<hr><br>
+
+<h3>➕ Add Course</h3>
+<input id="courseInput" placeholder="Course Name">
+<textarea id="courseDesc" placeholder="Course Details"></textarea>
+<button class="btn" onclick="addCourse()">Add Course</button>
+
+<hr><br>
+
+<h3>➕ Add Student</h3>
+<input id="studentInput" placeholder="Student Name">
+<input id="studentClass" placeholder="Class / Course">
+<button class="btn" onclick="addStudent()">Add Student</button>
+
+<hr><br>
+
+<h3>➕ Add Teacher</h3>
+<input id="teacherInput" placeholder="Teacher Name">
+<input id="teacherSubject" placeholder="Subject">
+<button class="btn" onclick="addTeacher()">Add Teacher</button>
+
+<hr><br>
+
+<h3>➕ Add Event</h3>
+<input id="eventInput" placeholder="Event Name">
+<button class="btn" onclick="addEvent()">Add Event</button>
+
+<hr><br>
+
+<h3>📸 Upload College Photos</h3>
+<input type="file" id="photoInput" accept="image/*" multiple>
+<button class="btn" onclick="addPhotos()">Upload Photos</button>
+
+<hr><br>
+
+<h3>✏️ Edit About College</h3>
+<textarea id="aboutInput" placeholder="About College"></textarea>
+<button class="btn" onclick="saveAbout()">Save About</button>
+
+<hr><br>
+
+<h3>⚙️ Website Settings</h3>
+<button class="btn" onclick="location.reload()">Refresh Website</button>
+<button class="btn" onclick="logout()">Logout</button>
+
+</div>
+</div>
+</section>
+
+<footer>
+<h2>RBS COLLEGE MADORA MAHAVAN</h2>
+<p>Education | Discipline | Excellence</p>
+<p>© 2026 RBS College. All Rights Reserved.</p>
+</footer>
+
+<script>
+const getData=(key)=>JSON.parse(localStorage.getItem(key)||"[]");
+const saveData=(key,data)=>localStorage.setItem(key,JSON.stringify(data));
+
+function render(key,id,template){
+ let data=getData(key);
+ let box=document.getElementById(id);
+ box.innerHTML="";
+ data.forEach((item,i)=>{
+  box.innerHTML+=template(item,i);
+ });
+}
+
+function login(){
+ if(document.getElementById("password").value==="RBS@123"){
+ document.getElementById("adminPanel").classList.remove("hidden");
+ alert("Admin Login Successful!");
+ }else alert("Wrong Password!");
+}
+function logout(){
+ document.getElementById("adminPanel").classList.add("hidden");
+}
+
+function addNotice(){
+ let title=document.getElementById("noticeInput").value;
+ let desc=document.getElementById("noticeDesc").value;
+ if(!title)return alert("Notice title डालें");
+ let data=getData("notices");
+ data.unshift({title,desc});
+ saveData("notices",data);
+ document.getElementById("noticeInput").value="";
+ document.getElementById("noticeDesc").value="";
+ showAll();
+}
+function addCourse(){
+ let name=document.getElementById("courseInput").value;
+ let desc=document.getElementById("courseDesc").value;
+ if(!name)return;
+ let data=getData("courses");
+ data.push({name,desc});
+ saveData("courses",data);
+ showAll();
+}
+function addStudent(){
+ let name=document.getElementById("studentInput").value;
+ let cls=document.getElementById("studentClass").value;
+ if(!name)return;
+ let data=getData("students");
+ data.push({name,cls});
+ saveData("students",data);
+ showAll();
+}
+function addTeacher(){
+ let name=document.getElementById("teacherInput").value;
+ let subject=document.getElementById("teacherSubject").value;
+ if(!name)return;
+ let data=getData("teachers");
+ data.push({name,subject});
+ saveData("teachers",data);
+ showAll();
+}
+function addEvent(){
+ let name=document.getElementById("eventInput").value;
+ if(!name)return;
+ let data=getData("events");
+ data.push(name);
+ saveData("events",data);
+ showAll();
+}
+function addPhotos(){
+ let files=[...document.getElementById("photoInput").files];
+ let data=getData("photos");
+ files.forEach(file=>{
+  let reader=new FileReader();
+  reader.onload=()=>{
+   data.push(reader.result);
+   saveData("photos",data);
+   showAll();
+  };
+  reader.readAsDataURL(file);
+ });
+}
+function saveAbout(){
+ let text=document.getElementById("aboutInput").value;
+ localStorage.setItem("about",text);
+ showAll();
+ alert("About Updated!");
+}
+function removeItem(key,index){
+ let data=getData(key);
+ data.splice(index,1);
+ saveData(key,data);
+ showAll();
+}
+function showAll(){
+ render("notices","noticeList",(x,i)=>
+ `<div class="notice-item"><h3>${safe(x.title)}</h3>
+ <p>${safe(x.desc)}</p>
+ <button class="small-btn" onclick="removeItem('notices',${i})">Delete</button></div>`);
+ render("courses","courseList",(x,i)=>
+ `<div class="card"><h3>${safe(x.name)}</h3><p>${safe(x.desc)}</p>
+ <button class="small-btn" onclick="removeItem('courses',${i})">Delete</button></div>`);
+ render("students","studentList",(x,i)=>
+ `<div class="notice-item">${safe(x.name)} - ${safe(x.cls)}
+ <button class="small-btn" onclick="removeItem('students',${i})">Delete</button></div>`);
+ render("teachers","teacherList",(x,i)=>
+ `<div class="card"><h3>${safe(x.name)}</h3><p>${safe(x.subject)}</p>
+ <button class="small-btn" onclick="removeItem('teachers',${i})">Delete</button></div>`);
+ render("events","eventList",(x,i)=>
+ `<div class="notice-item">${safe(x)}
+ <button class="small-btn" onclick="removeItem('events',${i})">Delete</button></div>`);
+ render("photos","galleryList",(x,i)=>
+ `<div><img src="${x}" alt="College Photo">
+ <button class="small-btn" onclick="removeItem('photos',${i})">Delete</button></div>`);
+ document.getElementById("aboutText").textContent=
+ localStorage.getItem("about")||"RBS College में आपका स्वागत है।";
+}
+function safe(value){
+ return String(value||"").replace(/[&<>"']/g,c=>({
+ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+ })[c]);
+}
+showAll();
+</script>
+
+</body>
+</html>
